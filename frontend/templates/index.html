@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block title %}Beranda{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <span class="hero-badge">Tes Minat Karier RIASEC</span>
+      <h1>Jelajahi Program Studi yang Profilnya Mirip dengan Minatmu</h1>
+      <p>
+        JuruMatch memakai tes minat karier <strong>RIASEC (Holland Code)</strong> dan
+        membandingkan profil minatmu dengan profil target 20 program studi lewat
+        <strong>jarak profil</strong>. Hasilnya prototipe eksploratif untuk bahan refleksi,
+        bukan penilaian psikologis atau keputusan akhir.
+      </p>
+      <a class="btn" href="{{ url_for('tes') }}">Mulai Tes Sekarang →</a>
+    </div>
+    <div class="hero-visual">
+      <svg class="hero-illustration" viewBox="0 0 320 320" role="img" aria-label="Enam dimensi minat RIASEC dibandingkan dengan profil program studi">
+        <polygon points="160,40 263.9,100 263.9,220 160,280 56.1,220 56.1,100" fill="none" stroke="var(--border)" stroke-width="2" stroke-dasharray="4 6"/>
+        <line x1="160" y1="160" x2="160" y2="40" stroke="var(--border)" stroke-width="2"/>
+        <line x1="160" y1="160" x2="263.9" y2="100" stroke="var(--border)" stroke-width="2"/>
+        <line x1="160" y1="160" x2="263.9" y2="220" stroke="var(--border)" stroke-width="2"/>
+        <line x1="160" y1="160" x2="160" y2="280" stroke="var(--border)" stroke-width="2"/>
+        <line x1="160" y1="160" x2="56.1" y2="220" stroke="var(--border)" stroke-width="2"/>
+        <line x1="160" y1="160" x2="56.1" y2="100" stroke="var(--border)" stroke-width="2"/>
+
+        <circle cx="160" cy="160" r="34" fill="var(--primary)"/>
+        <text x="160" y="169" text-anchor="middle" font-size="26">🧭</text>
+
+        <g class="hero-node hero-node-r">
+          <circle cx="160" cy="40" r="26" fill="var(--r-bg)" stroke="var(--r)" stroke-width="2.5"/>
+          <text x="160" y="49" text-anchor="middle" font-size="20">🔧</text>
+        </g>
+        <g class="hero-node hero-node-i">
+          <circle cx="263.9" cy="100" r="26" fill="var(--i-bg)" stroke="var(--i)" stroke-width="2.5"/>
+          <text x="263.9" y="109" text-anchor="middle" font-size="20">🔬</text>
+        </g>
+        <g class="hero-node hero-node-a">
+          <circle cx="263.9" cy="220" r="26" fill="var(--a-bg)" stroke="var(--a)" stroke-width="2.5"/>
+          <text x="263.9" y="229" text-anchor="middle" font-size="20">🎨</text>
+        </g>
+        <g class="hero-node hero-node-s">
+          <circle cx="160" cy="280" r="26" fill="var(--s-bg)" stroke="var(--s)" stroke-width="2.5"/>
+          <text x="160" y="289" text-anchor="middle" font-size="20">🤝</text>
+        </g>
+        <g class="hero-node hero-node-e">
+          <circle cx="56.1" cy="220" r="26" fill="var(--e-bg)" stroke="var(--e)" stroke-width="2.5"/>
+          <text x="56.1" y="229" text-anchor="middle" font-size="20">📈</text>
+        </g>
+        <g class="hero-node hero-node-c">
+          <circle cx="56.1" cy="100" r="26" fill="var(--c-bg)" stroke="var(--c)" stroke-width="2.5"/>
+          <text x="56.1" y="109" text-anchor="middle" font-size="20">🗂️</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="dimensi-preview">
+  <div class="dp-item r"><span>🔧</span>Realistic</div>
+  <div class="dp-item i"><span>🔬</span>Investigative</div>
+  <div class="dp-item a"><span>🎨</span>Artistic</div>
+  <div class="dp-item s"><span>🤝</span>Social</div>
+  <div class="dp-item e"><span>📈</span>Enterprising</div>
+  <div class="dp-item c"><span>🗂️</span>Conventional</div>
+</section>
+
+<section class="info-grid">
+  <div class="info-card">
+    <div class="info-num">1</div>
+    <h3>Kerjakan Tes</h3>
+    <p>Jawab 48 pernyataan singkat tentang minat dan kebiasaanmu, dikelompokkan rapi per tipe minat.</p>
+  </div>
+  <div class="info-card">
+    <div class="info-num">2</div>
+    <h3>Diproses Fuzzy Logic</h3>
+    <p>Skor RIASEC-mu difuzzifikasi dan dicocokkan dengan profil kebutuhan tiap jurusan.</p>
+  </div>
+  <div class="info-card">
+    <div class="info-num">3</div>
+    <h3>Dapatkan Rekomendasi</h3>
+    <p>Lihat 5 jurusan dengan tingkat kecocokan tertinggi untukmu, lengkap dengan skornya.</p>
+  </div>
+</section>
+{% endblock %}

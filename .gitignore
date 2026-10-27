@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Local database and runtime data
+backend/sirekomjur.db
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs / temporary files
+*.log
+*.tmp
+*.bak
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

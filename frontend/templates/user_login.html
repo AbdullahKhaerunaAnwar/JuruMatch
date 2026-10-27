@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Login User - JuruMatch{% endblock %}
+{% block content %}
+<section class="auth-card">
+<h1>Login User</h1>
+<p>Masuk untuk mengerjakan tes RIASEC.</p>
+{% if error %}<div class="flash"><p>{{ error }}</p></div>{% endif %}
+<form method="post">
+<label>Email</label><input class="auth-input" type="email" name="email" required>
+<label>Password</label><input class="auth-input" type="password" name="password" required>
+<button class="btn" type="submit">Login User</button>
+</form>
+<p>Belum punya akun? <a href="{{ url_for('register') }}">Daftar</a></p>
+<p><a href="{{ url_for('index') }}">← Pilih akses</a></p>
+</section>
+{% endblock %}

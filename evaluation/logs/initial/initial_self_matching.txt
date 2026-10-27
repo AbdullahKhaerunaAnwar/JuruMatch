@@ -1,0 +1,26 @@
+# self_matching | label=initial
+# env={"python": "3.12.3", "flask": "3.0.3", "werkzeug": "3.1.9", "platform": "Linux-6.18.44-fc-v153-x86_64-with-glibc2.39"}
+# code_sha256=03ed3a0d60cd87a8cc736003f940fcdd6a40063e80531e70afe4b2ab2391cb31
+[PASS] SM.01 Self-matching | input=target Teknik Mesin x100 sebagai profil pengguna | expected=skor sendiri = 100.00; peringkat 1 | observed=skor=100.0; peringkat=1; terdekat lain=Teknik Elektro (95.0); margin=5.0
+[PASS] SM.02 Self-matching | input=target Teknik Sipil x100 sebagai profil pengguna | expected=skor sendiri = 100.00; peringkat 1 | observed=skor=100.0; peringkat=1; terdekat lain=Teknik Mesin (95.0); margin=5.0
+[PASS] SM.03 Self-matching | input=target Teknik Elektro x100 sebagai profil pengguna | expected=skor sendiri = 100.00; peringkat 1 | observed=skor=100.0; peringkat=1; terdekat lain=Agroteknologi (95.0); margin=5.0
+[PASS] SM.04 Self-matching | input=target Agroteknologi x100 sebagai profil pengguna | expected=skor sendiri = 100.00; peringkat 1 | observed=skor=100.0; peringkat=1; terdekat lain=Teknik Elektro (95.0); margin=5.0
+[PASS] SM.05 Self-matching | input=target Informatika/Ilmu Komputer x100 sebagai profil pengguna | expected=skor sendiri = 100.00; peringkat 1 | observed=skor=100.0; peringkat=1; terdekat lain=Matematika (93.33); margin=6.67
+[PASS] SM.06 Self-matching | input=target Kedokteran x100 sebagai profil pengguna | expected=skor sendiri = 100.00; peringkat 1 | observed=skor=100.0; peringkat=1; terdekat lain=Farmasi (88.33); margin=11.67
+[PASS] SM.07 Self-matching | input=target Matematika x100 sebagai profil pengguna | expected=skor sendiri = 100.00; peringkat 1 | observed=skor=100.0; peringkat=1; terdekat lain=Farmasi (95.0); margin=5.0
+[PASS] SM.08 Self-matching | input=target Farmasi x100 sebagai profil pengguna | expected=skor sendiri = 100.00; peringkat 1 | observed=skor=100.0; peringkat=1; terdekat lain=Matematika (95.0); margin=5.0
+[PASS] SM.09 Self-matching | input=target Desain Komunikasi Visual x100 sebagai profil pengguna | expected=skor sendiri = 100.00; peringkat 1 | observed=skor=100.0; peringkat=1; terdekat lain=Seni Rupa (90.0); margin=10.0
+[PASS] SM.10 Self-matching | input=target Arsitektur x100 sebagai profil pengguna | expected=skor sendiri = 100.00; peringkat 1 | observed=skor=100.0; peringkat=1; terdekat lain=Desain Komunikasi Visual (88.33); margin=11.67
+[PASS] SM.11 Self-matching | input=target Seni Rupa x100 sebagai profil pengguna | expected=skor sendiri = 100.00; peringkat 1 | observed=skor=100.0; peringkat=1; terdekat lain=Desain Komunikasi Visual (90.0); margin=10.0
+[PASS] SM.12 Self-matching | input=target Psikologi x100 sebagai profil pengguna | expected=skor sendiri = 100.00; peringkat 1 | observed=skor=100.0; peringkat=1; terdekat lain=Pendidikan Guru (PGSD/PAUD) (93.33); margin=6.67
+[PASS] SM.13 Self-matching | input=target Pendidikan Guru (PGSD/PAUD) x100 sebagai profil pengguna | expected=skor sendiri = 100.00; peringkat 1 | observed=skor=100.0; peringkat=1; terdekat lain=Psikologi (93.33); margin=6.67
+[PASS] SM.14 Self-matching | input=target Keperawatan x100 sebagai profil pengguna | expected=skor sendiri = 100.00; peringkat 1 | observed=skor=100.0; peringkat=1; terdekat lain=Psikologi (90.0); margin=10.0
+[PASS] SM.15 Self-matching | input=target Manajemen x100 sebagai profil pengguna | expected=skor sendiri = 100.00; peringkat 1 | observed=skor=100.0; peringkat=1; terdekat lain=Ilmu Hukum (91.67); margin=8.33
+[PASS] SM.16 Self-matching | input=target Ilmu Hukum x100 sebagai profil pengguna | expected=skor sendiri = 100.00; peringkat 1 | observed=skor=100.0; peringkat=1; terdekat lain=Hubungan Internasional (95.0); margin=5.0
+[PASS] SM.17 Self-matching | input=target Hubungan Internasional x100 sebagai profil pengguna | expected=skor sendiri = 100.00; peringkat 1 | observed=skor=100.0; peringkat=1; terdekat lain=Ilmu Hukum (95.0); margin=5.0
+[PASS] SM.18 Self-matching | input=target Akuntansi x100 sebagai profil pengguna | expected=skor sendiri = 100.00; peringkat 1 | observed=skor=100.0; peringkat=1; terdekat lain=Administrasi Publik/Negara (93.33); margin=6.67
+[PASS] SM.19 Self-matching | input=target Sistem Informasi x100 sebagai profil pengguna | expected=skor sendiri = 100.00; peringkat 1 | observed=skor=100.0; peringkat=1; terdekat lain=Akuntansi (90.0); margin=10.0
+[PASS] SM.20 Self-matching | input=target Administrasi Publik/Negara x100 sebagai profil pengguna | expected=skor sendiri = 100.00; peringkat 1 | observed=skor=100.0; peringkat=1; terdekat lain=Akuntansi (93.33); margin=6.67
+[PASS] SM.unik Keunikan target | input=20 vektor target | expected=tidak ada vektor identik | observed=20 vektor unik dari 20
+[PASS] SM.margin Margin minimum | input=20 kasus | expected=margin minimum > 0 | observed=margin minimum = 5.0
+# self_matching: 22/22 PASS

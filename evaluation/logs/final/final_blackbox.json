@@ -1,0 +1,479 @@
+{
+ "meta": {
+  "suite": "blackbox",
+  "label": "final",
+  "environment": {
+   "python": "3.12.3",
+   "flask": "3.0.3",
+   "werkzeug": "3.1.9",
+   "platform": "Linux-6.18.44-fc-v153-x86_64-with-glibc2.39"
+  },
+  "code_manifest_sha256": "8017892454c33a8c3102092e649dbeefa53872d7b151c4539a11cb43bbb3b434",
+  "summary": "blackbox: 46/46 PASS",
+  "db_file": "berkas SQLite sementara (dibuat ulang tiap run)",
+  "urutan_skenario": [
+   "S0",
+   "S1",
+   "S2",
+   "S3",
+   "S4",
+   "S5",
+   "S6",
+   "S7.all1.hitung",
+   "S7.all1.antarmuka",
+   "S7.all3.hitung",
+   "S7.all3.antarmuka",
+   "S7.all5.hitung",
+   "S7.all5.antarmuka",
+   "S7.all2.hitung",
+   "S7.all2.antarmuka",
+   "S7.all4.hitung",
+   "S7.all4.antarmuka",
+   "S8.contoh",
+   "S8.hampir",
+   "S9",
+   "S10",
+   "S12",
+   "S13.di atas rentang",
+   "S13.di bawah rentang",
+   "S13.non-numerik",
+   "S13.kosong",
+   "S13.desimal",
+   "S13.negatif",
+   "S13.bertanda plus",
+   "S13.digit non-ASCII",
+   "S13.berspasi",
+   "S13.di atas rentang",
+   "S13.q25",
+   "S13.q48",
+   "S14",
+   "S15",
+   "S16",
+   "S17",
+   "S18.semua 1",
+   "S18.semua 3",
+   "S18.semua 5",
+   "S18.contoh kerja",
+   "S18.hampir seragam",
+   "S18.R tinggi",
+   "S18.S & E tinggi",
+   "S19"
+  ]
+ },
+ "results": [
+  {
+   "id": "S0",
+   "component": "Inisialisasi basis data",
+   "input": "impor app.py pada berkas SQLite baru",
+   "expected": "tabel hasil_tes & users ada; 1 akun admin; 0 hasil",
+   "observed": "tabel=['hasil_tes', 'users']; admin=['admin']; hasil=0",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S1",
+   "component": "Akses halaman awal",
+   "input": "GET / tanpa sesi",
+   "expected": "200; halaman pilihan akses/login",
+   "observed": "200; 'Pilih jenis akses'=True",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S2",
+   "component": "Proteksi rute",
+   "input": "GET /tes tanpa sesi",
+   "expected": "302 ke /login?next=/tes",
+   "observed": "302 -> /login?next=/tes",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S3",
+   "component": "Registrasi: password 5 karakter",
+   "input": "POST /register",
+   "expected": "ditolak (form tampil ulang, tanpa redirect)",
+   "observed": "200; pesan 'minimal 6'=True",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S4",
+   "component": "Registrasi valid",
+   "input": "POST /register (password 6 karakter)",
+   "expected": "302 dan sesi terbuka",
+   "observed": "302",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S5",
+   "component": "Halaman tes",
+   "input": "GET /tes (login)",
+   "expected": "200; 48 butir x 5 pilihan = 240 radio",
+   "observed": "200; radio=240; butir=48",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S6",
+   "component": "Pengiriman tidak lengkap",
+   "input": "47 dari 48 jawaban (butir 48 hilang)",
+   "expected": "302 ke /tes; pesan 'nomor 48 belum dijawab'; tidak ada yang tersimpan",
+   "observed": "302 -> /tes; pesan=True; hasil +0",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S7.all1.hitung",
+   "component": "Semua jawaban = 1: skor, kode, peringkat",
+   "input": "48 x 1",
+   "expected": "enam skor = 0.0; kode RIA; 5 rekomendasi = peringkat independen ('Seni Rupa', 70.0)...",
+   "observed": "skor=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]; kode=RIA; top-1=(Seni Rupa, 70.0); tersimpan=5",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S7.all1.antarmuka",
+   "component": "Profil seragam (semua = 1): antarmuka",
+   "input": "GET /hasil/1",
+   "expected": "peringatan 'belum terdiferensiasi'; kode Holland tidak ditampilkan; label pita disembunyikan",
+   "observed": "peringatan=True; kode_disembunyikan=True; pita_disembunyikan=True",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S7.all3.hitung",
+   "component": "Semua jawaban = 3: skor, kode, peringkat",
+   "input": "48 x 3",
+   "expected": "enam skor = 50.0; kode RIA; 5 rekomendasi = peringkat independen ('Ilmu Hukum', 80.0)...",
+   "observed": "skor=[50.0, 50.0, 50.0, 50.0, 50.0, 50.0]; kode=RIA; top-1=(Ilmu Hukum, 80.0); tersimpan=5",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S7.all3.antarmuka",
+   "component": "Profil seragam (semua = 3): antarmuka",
+   "input": "GET /hasil/2",
+   "expected": "peringatan 'belum terdiferensiasi'; kode Holland tidak ditampilkan; label pita disembunyikan",
+   "observed": "peringatan=True; kode_disembunyikan=True; pita_disembunyikan=True",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S7.all5.hitung",
+   "component": "Semua jawaban = 5: skor, kode, peringkat",
+   "input": "48 x 5",
+   "expected": "enam skor = 100.0; kode RIA; 5 rekomendasi = peringkat independen ('Arsitektur', 45.0)...",
+   "observed": "skor=[100.0, 100.0, 100.0, 100.0, 100.0, 100.0]; kode=RIA; top-1=(Arsitektur, 45.0); tersimpan=5",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S7.all5.antarmuka",
+   "component": "Profil seragam (semua = 5): antarmuka",
+   "input": "GET /hasil/3",
+   "expected": "peringatan 'belum terdiferensiasi'; kode Holland tidak ditampilkan; label pita disembunyikan",
+   "observed": "peringatan=True; kode_disembunyikan=True; pita_disembunyikan=True",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S7.all2.hitung",
+   "component": "Semua jawaban = 2: skor, kode, peringkat",
+   "input": "48 x 2",
+   "expected": "enam skor = 25.0; kode RIA; 5 rekomendasi = peringkat independen ('Farmasi', 81.67)...",
+   "observed": "skor=[25.0, 25.0, 25.0, 25.0, 25.0, 25.0]; kode=RIA; top-1=(Farmasi, 81.67); tersimpan=5",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S7.all2.antarmuka",
+   "component": "Profil seragam (semua = 2): antarmuka",
+   "input": "GET /hasil/4",
+   "expected": "peringatan 'belum terdiferensiasi'; kode Holland tidak ditampilkan; label pita disembunyikan",
+   "observed": "peringatan=True; kode_disembunyikan=True; pita_disembunyikan=True",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S7.all4.hitung",
+   "component": "Semua jawaban = 4: skor, kode, peringkat",
+   "input": "48 x 4",
+   "expected": "enam skor = 75.0; kode RIA; 5 rekomendasi = peringkat independen ('Arsitektur', 65.0)...",
+   "observed": "skor=[75.0, 75.0, 75.0, 75.0, 75.0, 75.0]; kode=RIA; top-1=(Arsitektur, 65.0); tersimpan=5",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S7.all4.antarmuka",
+   "component": "Profil seragam (semua = 4): antarmuka",
+   "input": "GET /hasil/5",
+   "expected": "peringatan 'belum terdiferensiasi'; kode Holland tidak ditampilkan; label pita disembunyikan",
+   "observed": "peringatan=True; kode_disembunyikan=True; pita_disembunyikan=True",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S8.contoh",
+   "component": "Profil tidak seragam (contoh kerja)",
+   "input": "S=(15,27,27,24,17,31)",
+   "expected": "skor [21.88,59.38,59.38,50.0,28.12,71.88]; kode CIA; tanpa peringatan; pita tampil; skor 'x / 100'; peringkat = independen",
+   "observed": "skor=[21.88, 59.38, 59.38, 50.0, 28.12, 71.88]; kode=CIA; peringatan=False; pita=True; format=True",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S8.hampir",
+   "component": "Hampir seragam: satu skor berbeda",
+   "input": "47 x 3 dan q_1=4",
+   "expected": "tanpa peringatan (skor R = 53.12, lainnya 50.0)",
+   "observed": "peringatan=False; skor=[53.12, 50.0, 50.0, 50.0, 50.0, 50.0]",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S9",
+   "component": "Disclaimer dan label pada halaman hasil",
+   "input": "GET /hasil/<id>",
+   "expected": "memuat 'bukan probabilitas' dan 'heuristik'; label 'Kemiripan ...'; tanpa label lama 'Sangat Cocok/Cukup Cocok/Tidak Cocok'",
+   "observed": "bukan probabilitas=True; heuristik=True; label baru=True; label lama ditemukan=[]",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S10",
+   "component": "Isi halaman hasil",
+   "input": "GET /hasil/6",
+   "expected": "200; kode Holland dan 5 program berperingkat",
+   "observed": "kode CIA tampil=True; kartu=5",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S12",
+   "component": "Riwayat",
+   "input": "GET /riwayat",
+   "expected": "200; 7 hasil terdaftar (semua milik pengguna ini)",
+   "observed": "200; tautan=7",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S13.di atas rentang",
+   "component": "Jawaban tidak valid (di atas rentang)",
+   "input": "q_1='9'; 47 jawaban lain valid (True)",
+   "expected": "302 ke /tes; pesan 'Jawaban pertanyaan nomor 1 tidak valid'; tidak ada yang tersimpan",
+   "observed": "302 -> /tes; pesan=True; hasil +0",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S13.di bawah rentang",
+   "component": "Jawaban tidak valid (di bawah rentang)",
+   "input": "q_1='0'; 47 jawaban lain valid (True)",
+   "expected": "302 ke /tes; pesan 'Jawaban pertanyaan nomor 1 tidak valid'; tidak ada yang tersimpan",
+   "observed": "302 -> /tes; pesan=True; hasil +0",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S13.non-numerik",
+   "component": "Jawaban tidak valid (non-numerik)",
+   "input": "q_1='abc'; 47 jawaban lain valid (True)",
+   "expected": "302 ke /tes; pesan 'Jawaban pertanyaan nomor 1 tidak valid'; tidak ada yang tersimpan",
+   "observed": "302 -> /tes; pesan=True; hasil +0",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S13.kosong",
+   "component": "Jawaban tidak valid (kosong)",
+   "input": "q_1=''; 47 jawaban lain valid (True)",
+   "expected": "302 ke /tes; pesan 'Jawaban pertanyaan nomor 1 tidak valid'; tidak ada yang tersimpan",
+   "observed": "302 -> /tes; pesan=True; hasil +0",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S13.desimal",
+   "component": "Jawaban tidak valid (desimal)",
+   "input": "q_1='3.5'; 47 jawaban lain valid (True)",
+   "expected": "302 ke /tes; pesan 'Jawaban pertanyaan nomor 1 tidak valid'; tidak ada yang tersimpan",
+   "observed": "302 -> /tes; pesan=True; hasil +0",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S13.negatif",
+   "component": "Jawaban tidak valid (negatif)",
+   "input": "q_1='-1'; 47 jawaban lain valid (True)",
+   "expected": "302 ke /tes; pesan 'Jawaban pertanyaan nomor 1 tidak valid'; tidak ada yang tersimpan",
+   "observed": "302 -> /tes; pesan=True; hasil +0",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S13.bertanda plus",
+   "component": "Jawaban tidak valid (bertanda plus)",
+   "input": "q_1='+3'; 47 jawaban lain valid (True)",
+   "expected": "302 ke /tes; pesan 'Jawaban pertanyaan nomor 1 tidak valid'; tidak ada yang tersimpan",
+   "observed": "302 -> /tes; pesan=True; hasil +0",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S13.digit non-ASCII",
+   "component": "Jawaban tidak valid (digit non-ASCII)",
+   "input": "q_1='٣'; 47 jawaban lain valid (True)",
+   "expected": "302 ke /tes; pesan 'Jawaban pertanyaan nomor 1 tidak valid'; tidak ada yang tersimpan",
+   "observed": "302 -> /tes; pesan=True; hasil +0",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S13.berspasi",
+   "component": "Jawaban tidak valid (berspasi)",
+   "input": "q_1=' 3'; 47 jawaban lain valid (True)",
+   "expected": "302 ke /tes; pesan 'Jawaban pertanyaan nomor 1 tidak valid'; tidak ada yang tersimpan",
+   "observed": "302 -> /tes; pesan=True; hasil +0",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S13.di atas rentang",
+   "component": "Jawaban tidak valid (di atas rentang)",
+   "input": "q_1='6'; 47 jawaban lain valid (True)",
+   "expected": "302 ke /tes; pesan 'Jawaban pertanyaan nomor 1 tidak valid'; tidak ada yang tersimpan",
+   "observed": "302 -> /tes; pesan=True; hasil +0",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S13.q25",
+   "component": "Jawaban tidak valid (butir lain)",
+   "input": "q_25='abc'",
+   "expected": "pesan menyebut nomor 25; tidak tersimpan",
+   "observed": "302; pesan=True; hasil +0",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S13.q48",
+   "component": "Jawaban tidak valid (butir lain)",
+   "input": "q_48='0'",
+   "expected": "pesan menyebut nomor 48; tidak tersimpan",
+   "observed": "302; pesan=True; hasil +0",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S14",
+   "component": "Proteksi peran admin",
+   "input": "GET /admin dan /admin/hasil/<id> dengan sesi pengguna biasa",
+   "expected": "tidak dapat diakses (302)",
+   "observed": "302 -> /; 302 -> /",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S15",
+   "component": "Isolasi data antar pengguna",
+   "input": "pengguna 2 membuka /hasil/<id milik pengguna 1>",
+   "expected": "dialihkan ke /riwayat; isi tidak tampil",
+   "observed": "302 -> /riwayat",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S16",
+   "component": "Login admin",
+   "input": "POST /admin/login",
+   "expected": "302",
+   "observed": "302 -> /admin/dashboard",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S17",
+   "component": "Centroid fuzzy tambahan hanya di halaman detail admin",
+   "input": "GET /admin/hasil/6 (admin) vs /hasil/6 (pengguna)",
+   "expected": "admin 200 dan memuat centroid 37.01 berlabel 'tidak memengaruhi urutan'; halaman pengguna tanpa kata 'centroid'",
+   "observed": "admin=200; centroid_tampil=True; label=True; pengguna_bebas_centroid=True",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S18.semua 1",
+   "component": "Centroid tidak memengaruhi peringkat/skor",
+   "input": "profil semua 1; centroid diganti konstan 0, konstan 100, dan dibalik",
+   "expected": "peringkat dan skor identik pada keempat varian (centroid memang berubah)",
+   "observed": "peringkat_identik=True; centroid_berubah=True",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S18.semua 3",
+   "component": "Centroid tidak memengaruhi peringkat/skor",
+   "input": "profil semua 3; centroid diganti konstan 0, konstan 100, dan dibalik",
+   "expected": "peringkat dan skor identik pada keempat varian (centroid memang berubah)",
+   "observed": "peringkat_identik=True; centroid_berubah=True",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S18.semua 5",
+   "component": "Centroid tidak memengaruhi peringkat/skor",
+   "input": "profil semua 5; centroid diganti konstan 0, konstan 100, dan dibalik",
+   "expected": "peringkat dan skor identik pada keempat varian (centroid memang berubah)",
+   "observed": "peringkat_identik=True; centroid_berubah=True",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S18.contoh kerja",
+   "component": "Centroid tidak memengaruhi peringkat/skor",
+   "input": "profil contoh kerja; centroid diganti konstan 0, konstan 100, dan dibalik",
+   "expected": "peringkat dan skor identik pada keempat varian (centroid memang berubah)",
+   "observed": "peringkat_identik=True; centroid_berubah=True",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S18.hampir seragam",
+   "component": "Centroid tidak memengaruhi peringkat/skor",
+   "input": "profil hampir seragam; centroid diganti konstan 0, konstan 100, dan dibalik",
+   "expected": "peringkat dan skor identik pada keempat varian (centroid memang berubah)",
+   "observed": "peringkat_identik=True; centroid_berubah=True",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S18.R tinggi",
+   "component": "Centroid tidak memengaruhi peringkat/skor",
+   "input": "profil R tinggi; centroid diganti konstan 0, konstan 100, dan dibalik",
+   "expected": "peringkat dan skor identik pada keempat varian (centroid memang berubah)",
+   "observed": "peringkat_identik=True; centroid_berubah=True",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S18.S & E tinggi",
+   "component": "Centroid tidak memengaruhi peringkat/skor",
+   "input": "profil S & E tinggi; centroid diganti konstan 0, konstan 100, dan dibalik",
+   "expected": "peringkat dan skor identik pada keempat varian (centroid memang berubah)",
+   "observed": "peringkat_identik=True; centroid_berubah=True",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "S19",
+   "component": "Centroid dimanipulasi lewat alur HTTP penuh",
+   "input": "jawaban sama dikirim dua kali; kedua kali centroid diganti 0.0 pada kiriman kedua",
+   "expected": "daftar 5 program (nama, skor, pita) identik; centroid tersimpan berbeda",
+   "observed": "identik=True; centroid_a=[37.01, 22.32, 37.08, 31.26, 25.13]; centroid_b=[0.0, 0.0, 0.0, 0.0, 0.0]",
+   "status": "PASS",
+   "note": ""
+  }
+ ]
+}

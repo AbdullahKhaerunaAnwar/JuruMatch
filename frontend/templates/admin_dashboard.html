@@ -1,0 +1,39 @@
+{% extends "base.html" %}{% block title %}Dashboard Admin{% endblock %}{% block content %}
+<h1>Dashboard Admin</h1><div class="info-grid">
+<div class="info-card"><h3>Pengguna</h3><p style="font-size:2rem">{{user_count}}</p></div>
+<div class="info-card"><h3>Hasil Tes</h3><p style="font-size:2rem">{{result_count}}</p></div></div>
+<h2>Data Pengguna</h2><table class="tabel-riwayat"><thead><tr><th>ID</th><th>Nama</th><th>Email</th><th>Role</th><th>Dibuat</th></tr></thead><tbody>
+{% for u in users %}<tr><td>{{u.id}}</td><td>{{u.nama}}</td><td>{{u.email}}</td><td>{{u.role}}</td><td>{{u.dibuat_pada}}</td></tr>{% endfor %}
+</tbody></table><h2>Hasil Tes</h2><table class="tabel-riwayat"><thead><tr><th>ID</th>
+<th>Nama</th>
+<th>Email</th>
+<th>Holland</th>
+<th>Tanggal</th>
+<th>Aksi</th></tr></thead><tbody>
+{% for r in results %}
+<tr>
+    <td>{{r.id}}</td>
+    <td>{{r.nama}}</td>
+    <td>{{r.email or '-'}}</td>
+    <td>
+        <strong>{{r.kode_holland}}</strong>
+    </td>
+    <td>{{r.dibuat_pada}}</td>
+    <td>
+        <a href="{{ url_for('admin_detail_hasil', hasil_id=r.id) }}"
+           style="
+               display:inline-block;
+               padding:7px 12px;
+               background:#2563eb;
+               color:white;
+               text-decoration:none;
+               border-radius:8px;
+               font-size:.85rem;
+               font-weight:600;
+           ">
+            Lihat Detail
+        </a>
+    </td>
+</tr>
+{% endfor %}
+</tbody></table>{% endblock %}

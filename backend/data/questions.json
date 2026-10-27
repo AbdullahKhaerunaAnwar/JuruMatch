@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "dimensi": "R",
+    "teks": "Memeriksa kualitas suku cadang sebelum dikirim kepada pelanggan."
+  },
+  {
+    "id": 2,
+    "dimensi": "R",
+    "teks": "Memasang batu bata atau ubin pada bangunan."
+  },
+  {
+    "id": 3,
+    "dimensi": "R",
+    "teks": "Bekerja di anjungan pengeboran minyak lepas pantai."
+  },
+  {
+    "id": 4,
+    "dimensi": "R",
+    "teks": "Merakit komponen elektronik."
+  },
+  {
+    "id": 5,
+    "dimensi": "R",
+    "teks": "Mengoperasikan mesin gerinda di lingkungan pabrik."
+  },
+  {
+    "id": 6,
+    "dimensi": "R",
+    "teks": "Memperbaiki keran air yang bocor."
+  },
+  {
+    "id": 7,
+    "dimensi": "R",
+    "teks": "Merakit produk pada jalur produksi di pabrik."
+  },
+  {
+    "id": 8,
+    "dimensi": "R",
+    "teks": "Memasang lantai pada rumah atau bangunan."
+  },
+  {
+    "id": 9,
+    "dimensi": "I",
+    "teks": "Mempelajari struktur tubuh manusia."
+  },
+  {
+    "id": 10,
+    "dimensi": "I",
+    "teks": "Mempelajari perilaku hewan."
+  },
+  {
+    "id": 11,
+    "dimensi": "I",
+    "teks": "Melakukan penelitian tentang tumbuhan atau hewan."
+  },
+  {
+    "id": 12,
+    "dimensi": "I",
+    "teks": "Mengembangkan pengobatan atau prosedur medis baru."
+  },
+  {
+    "id": 13,
+    "dimensi": "I",
+    "teks": "Melakukan penelitian di bidang biologi."
+  },
+  {
+    "id": 14,
+    "dimensi": "I",
+    "teks": "Mempelajari paus dan kehidupan laut lainnya."
+  },
+  {
+    "id": 15,
+    "dimensi": "I",
+    "teks": "Bekerja di laboratorium biologi."
+  },
+  {
+    "id": 16,
+    "dimensi": "I",
+    "teks": "Membuat peta dasar laut."
+  },
+  {
+    "id": 17,
+    "dimensi": "A",
+    "teks": "Memimpin sebuah paduan suara."
+  },
+  {
+    "id": 18,
+    "dimensi": "A",
+    "teks": "Menyutradarai pertunjukan drama."
+  },
+  {
+    "id": 19,
+    "dimensi": "A",
+    "teks": "Mendesain ilustrasi untuk majalah."
+  },
+  {
+    "id": 20,
+    "dimensi": "A",
+    "teks": "Menulis lirik lagu."
+  },
+  {
+    "id": 21,
+    "dimensi": "A",
+    "teks": "Menulis buku atau naskah drama."
+  },
+  {
+    "id": 22,
+    "dimensi": "A",
+    "teks": "Memainkan alat musik."
+  },
+  {
+    "id": 23,
+    "dimensi": "A",
+    "teks": "Melakukan aksi stunt untuk film atau acara televisi."
+  },
+  {
+    "id": 24,
+    "dimensi": "A",
+    "teks": "Mendesain set panggung untuk pertunjukan drama."
+  },
+  {
+    "id": 25,
+    "dimensi": "S",
+    "teks": "Memberikan bimbingan karier kepada orang lain."
+  },
+  {
+    "id": 26,
+    "dimensi": "S",
+    "teks": "Melakukan kegiatan sukarela di organisasi nirlaba."
+  },
+  {
+    "id": 27,
+    "dimensi": "S",
+    "teks": "Membantu orang yang mengalami masalah terkait narkoba atau alkohol."
+  },
+  {
+    "id": 28,
+    "dimensi": "S",
+    "teks": "Mengajarkan rutinitas olahraga tertentu kepada orang lain."
+  },
+  {
+    "id": 29,
+    "dimensi": "S",
+    "teks": "Membantu orang yang sedang menghadapi masalah keluarga."
+  },
+  {
+    "id": 30,
+    "dimensi": "S",
+    "teks": "Mengawasi kegiatan anak-anak di sebuah perkemahan."
+  },
+  {
+    "id": 31,
+    "dimensi": "S",
+    "teks": "Mengajarkan anak-anak cara membaca."
+  },
+  {
+    "id": 32,
+    "dimensi": "S",
+    "teks": "Membantu lansia melakukan aktivitas sehari-hari."
+  },
+  {
+    "id": 33,
+    "dimensi": "E",
+    "teks": "Menjual waralaba (franchise) restoran kepada calon investor."
+  },
+  {
+    "id": 34,
+    "dimensi": "E",
+    "teks": "Menjual barang dagangan di toko serba ada atau department store."
+  },
+  {
+    "id": 35,
+    "dimensi": "E",
+    "teks": "Mengelola operasional sebuah hotel."
+  },
+  {
+    "id": 36,
+    "dimensi": "E",
+    "teks": "Mengelola salon kecantikan atau tempat pangkas rambut."
+  },
+  {
+    "id": 37,
+    "dimensi": "E",
+    "teks": "Mengelola sebuah departemen di perusahaan besar."
+  },
+  {
+    "id": 38,
+    "dimensi": "E",
+    "teks": "Mengelola sebuah toko pakaian."
+  },
+  {
+    "id": 39,
+    "dimensi": "E",
+    "teks": "Menjual rumah sebagai agen properti."
+  },
+  {
+    "id": 40,
+    "dimensi": "E",
+    "teks": "Menjalankan sebuah toko mainan."
+  },
+  {
+    "id": 41,
+    "dimensi": "C",
+    "teks": "Membuat slip gaji bulanan untuk sebuah kantor."
+  },
+  {
+    "id": 42,
+    "dimensi": "C",
+    "teks": "Mencatat persediaan barang menggunakan komputer genggam."
+  },
+  {
+    "id": 43,
+    "dimensi": "C",
+    "teks": "Menggunakan program komputer untuk membuat tagihan pelanggan."
+  },
+  {
+    "id": 44,
+    "dimensi": "C",
+    "teks": "Memelihara dan memperbarui data karyawan."
+  },
+  {
+    "id": 45,
+    "dimensi": "C",
+    "teks": "Menghitung dan mencatat data statistik serta data numerik lainnya."
+  },
+  {
+    "id": 46,
+    "dimensi": "C",
+    "teks": "Menggunakan kalkulator untuk pekerjaan administratif."
+  },
+  {
+    "id": 47,
+    "dimensi": "C",
+    "teks": "Menangani transaksi perbankan milik nasabah."
+  },
+  {
+    "id": 48,
+    "dimensi": "C",
+    "teks": "Mencatat pengiriman dan penerimaan barang."
+  }
+]

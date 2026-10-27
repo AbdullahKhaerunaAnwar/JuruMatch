@@ -1,0 +1,143 @@
+# numeric | label=initial
+# env={"python": "3.12.3", "flask": "3.0.3", "werkzeug": "3.1.9", "platform": "Linux-6.18.44-fc-v153-x86_64-with-glibc2.39"}
+# code_sha256=03ed3a0d60cd87a8cc736003f940fcdd6a40063e80531e70afe4b2ab2391cb31
+[PASS] A1.8 Normalisasi | input=S=8 | expected=0.0 | observed=0.0
+[PASS] A1.9 Normalisasi | input=S=9 | expected=3.12 | observed=3.12
+[PASS] A1.10 Normalisasi | input=S=10 | expected=6.25 | observed=6.25
+[PASS] A1.11 Normalisasi | input=S=11 | expected=9.38 | observed=9.38
+[PASS] A1.12 Normalisasi | input=S=12 | expected=12.5 | observed=12.5
+[PASS] A1.13 Normalisasi | input=S=13 | expected=15.62 | observed=15.62
+[PASS] A1.14 Normalisasi | input=S=14 | expected=18.75 | observed=18.75
+[PASS] A1.15 Normalisasi | input=S=15 | expected=21.88 | observed=21.88
+[PASS] A1.16 Normalisasi | input=S=16 | expected=25.0 | observed=25.0
+[PASS] A1.17 Normalisasi | input=S=17 | expected=28.12 | observed=28.12
+[PASS] A1.18 Normalisasi | input=S=18 | expected=31.25 | observed=31.25
+[PASS] A1.19 Normalisasi | input=S=19 | expected=34.38 | observed=34.38
+[PASS] A1.20 Normalisasi | input=S=20 | expected=37.5 | observed=37.5
+[PASS] A1.21 Normalisasi | input=S=21 | expected=40.62 | observed=40.62
+[PASS] A1.22 Normalisasi | input=S=22 | expected=43.75 | observed=43.75
+[PASS] A1.23 Normalisasi | input=S=23 | expected=46.88 | observed=46.88
+[PASS] A1.24 Normalisasi | input=S=24 | expected=50.0 | observed=50.0
+[PASS] A1.25 Normalisasi | input=S=25 | expected=53.12 | observed=53.12
+[PASS] A1.26 Normalisasi | input=S=26 | expected=56.25 | observed=56.25
+[PASS] A1.27 Normalisasi | input=S=27 | expected=59.38 | observed=59.38
+[PASS] A1.28 Normalisasi | input=S=28 | expected=62.5 | observed=62.5
+[PASS] A1.29 Normalisasi | input=S=29 | expected=65.62 | observed=65.62
+[PASS] A1.30 Normalisasi | input=S=30 | expected=68.75 | observed=68.75
+[PASS] A1.31 Normalisasi | input=S=31 | expected=71.88 | observed=71.88
+[PASS] A1.32 Normalisasi | input=S=32 | expected=75.0 | observed=75.0
+[PASS] A1.33 Normalisasi | input=S=33 | expected=78.12 | observed=78.12
+[PASS] A1.34 Normalisasi | input=S=34 | expected=81.25 | observed=81.25
+[PASS] A1.35 Normalisasi | input=S=35 | expected=84.38 | observed=84.38
+[PASS] A1.36 Normalisasi | input=S=36 | expected=87.5 | observed=87.5
+[PASS] A1.37 Normalisasi | input=S=37 | expected=90.62 | observed=90.62
+[PASS] A1.38 Normalisasi | input=S=38 | expected=93.75 | observed=93.75
+[PASS] A1.39 Normalisasi | input=S=39 | expected=96.88 | observed=96.88
+[PASS] A1.40 Normalisasi | input=S=40 | expected=100.0 | observed=100.0
+[PASS] A2.7 Normalisasi (batas/clip) | input=S=7 | expected=0.0 | observed=0.0
+[PASS] A2.41 Normalisasi (batas/clip) | input=S=41 | expected=100.0 | observed=100.0
+[PASS] A3 Normalisasi (pembulatan separuh) | input=S=17 (28.125 eksak) | expected=28.12 | observed=28.12 | round-half-even; 28.125 tepat representable
+[PASS] A4 Normalisasi (pembulatan separuh) | input=S=31 (71.875 eksak) | expected=71.88 | observed=71.88
+[PASS] B1 Keanggotaan (grid 0-100 + sekitar breakpoint) | input=207 titik | expected=selisih maks <= 1e-12 | observed=selisih maks = 1.91e-16
+[PASS] B2 Keanggotaan (partisi satuan) | input=207 titik | expected=rendah+sedang+tinggi = 1 di semua titik | observed=terpenuhi
+[PASS] B3.0 Keanggotaan (titik tabel naskah) | input=x=0 | expected=(1, 0, 0) | observed=(1.0, 0.0, 0.0)
+[PASS] B3.25 Keanggotaan (titik tabel naskah) | input=x=25 | expected=(1, 0, 0) | observed=(1.0, 0.0, 0.0)
+[PASS] B3.37.5 Keanggotaan (titik tabel naskah) | input=x=37.5 | expected=(0.5, 0.5, 0) | observed=(0.5, 0.5, 0.0)
+[PASS] B3.50 Keanggotaan (titik tabel naskah) | input=x=50 | expected=(0, 1, 0) | observed=(0.0, 1.0, 0.0)
+[PASS] B3.62.5 Keanggotaan (titik tabel naskah) | input=x=62.5 | expected=(0, 0.5, 0.5) | observed=(0.0, 0.5, 0.5)
+[PASS] B3.75 Keanggotaan (titik tabel naskah) | input=x=75 | expected=(0, 0, 1) | observed=(0.0, 0.0, 1.0)
+[PASS] B3.100 Keanggotaan (titik tabel naskah) | input=x=100 | expected=(0, 0, 1) | observed=(0.0, 0.0, 1.0)
+[PASS] C1.37.5-37.5 Overlap per dimensi | input=U=37.5, T=37.5 | expected=1 | observed=1.0
+[PASS] C1.0-100 Overlap per dimensi | input=U=0, T=100 | expected=0 | observed=0.0
+[PASS] C1.37.5-62.5 Overlap per dimensi | input=U=37.5, T=62.5 | expected=0.5 | observed=0.5
+[PASS] C1.50-50 Overlap per dimensi | input=U=50, T=50 | expected=1 | observed=1.0
+[PASS] C1.25-75 Overlap per dimensi | input=U=25, T=75 | expected=0 | observed=0.0
+[PASS] C1.0-25 Overlap per dimensi | input=U=0, T=25 | expected=1 | observed=1.0
+[PASS] C1.25-50 Overlap per dimensi | input=U=25, T=50 | expected=0 | observed=0.0
+[PASS] C1.50-75 Overlap per dimensi | input=U=50, T=75 | expected=0 | observed=0.0
+[PASS] C1.75-100 Overlap per dimensi | input=U=75, T=100 | expected=1 | observed=1.0
+[PASS] C1.10-90 Overlap per dimensi | input=U=10, T=90 | expected=0 | observed=0.0
+[PASS] C2 Overlap vs referensi eksak | input=U pada grid x T in {10..90} | expected=selisih maks <= 1e-12 | observed=selisih maks = 1.11e-16
+[PASS] C3 Overlap identik | input=U = T pada grid | expected=overlap = 1 di semua titik | observed=terpenuhi
+[PASS] D1.tanpa seri (Teknik Mesin) Dimensi utama | input={'R': 0.9, 'I': 0.5, 'A': 0.1, 'S': 0.1, 'E': 0.2, 'C': 0.4} | expected=['R', 'I'] | observed=['R', 'I']
+[PASS] D1.seri di urutan ke-2 (Ilmu Hukum: I=S=0.5) Dimensi utama | input={'R': 0.1, 'I': 0.5, 'A': 0.2, 'S': 0.5, 'E': 0.9, 'C': 0.4} | expected=['E', 'I'] | observed=['E', 'I']
+[PASS] D1.seri di urutan ke-1 Dimensi utama | input={'R': 0.5, 'I': 0.5, 'A': 0.1, 'S': 0.1, 'E': 0.1, 'C': 0.1} | expected=['R', 'I'] | observed=['R', 'I']
+[PASS] D1.semua sama Dimensi utama | input={'R': 0.5, 'I': 0.5, 'A': 0.5, 'S': 0.5, 'E': 0.5, 'C': 0.5} | expected=['R', 'I'] | observed=['R', 'I']
+[PASS] D1.tiga seri teratas Dimensi utama | input={'R': 0.1, 'I': 0.1, 'A': 0.9, 'S': 0.9, 'E': 0.9, 'C': 0.1} | expected=['A', 'S'] | observed=['A', 'S']
+[PASS] D1.seri R vs I di bawah C Dimensi utama | input={'R': 0.5, 'I': 0.5, 'A': 0.1, 'S': 0.1, 'E': 0.1, 'C': 0.9} | expected=['C', 'R'] | observed=['C', 'R']
+[PASS] D1.urutan kunci dict diacak Dimensi utama | input={'C': 0.1, 'E': 0.9, 'S': 0.9, 'A': 0.9, 'I': 0.1, 'R': 0.1} | expected=['A', 'S'] | observed=['A', 'S']
+[PASS] D2 Dimensi utama (Ilmu Hukum) | input=E=0.9; I=S=0.5 | expected=['E', 'I'] | observed=['E', 'I'] | seri I vs S diputus oleh urutan R,I,A,S,E,C -> I
+[PASS] D3 Dimensi utama (20 program vs referensi) | input=20 target | expected=identik | observed=identik
+[PASS] D4 Program dengan seri pada batas dimensi utama | input=20 target | expected=(informasi) | observed=['Pendidikan Guru (PGSD/PAUD)', 'Ilmu Hukum', 'Administrasi Publik/Negara'] | program-program ini mengandalkan aturan seri R,I,A,S,E,C
+[PASS] E0 Contoh kerja: nilai tersimpan | input=S=(15,27,27,24,17,31) | expected=[21.88, 59.38, 59.38, 50.0, 28.12, 71.88] | observed=[21.88, 59.38, 59.38, 50.0, 28.12, 71.88]
+[PASS] E1 Firing strength: U = T (semua overlap 1) | input=U={'R': 30.0, 'I': 60.0, 'A': 10.0, 'S': 20.0, 'E': 40.0, 'C': 80.0}; T={'R': 0.3, 'I': 0.6, 'A': 0.1, 'S': 0.2, 'E': 0.4, 'C': 0.8} | expected=(0.0, 1.0, 1.0) | observed=(0.0, 1.0, 1.0)
+[PASS] E2 Firing strength: tidak beririsan sama sekali | input=U={'R': 0.0, 'I': 0.0, 'A': 0.0, 'S': 0.0, 'E': 0.0, 'C': 0.0}; T={'R': 1.0, 'I': 1.0, 'A': 1.0, 'S': 1.0, 'E': 1.0, 'C': 1.0} | expected=(1.0, 0.0, 0.0) | observed=(1.0, 0.0, 0.0)
+[PASS] E3 Firing strength: contoh kerja, presisi penuh | input=U={'R': 21.875, 'I': 59.375, 'A': 59.375, 'S': 50.0, 'E': 28.125, 'C': 71.875}; T={'R': 0.3, 'I': 0.6, 'A': 0.1, 'S': 0.2, 'E': 0.4, 'C': 0.8} | expected=(0.4708, 0.875, 0.0) | observed=(0.4708, 0.875, 0.0)
+[PASS] E4 Firing strength: contoh kerja, nilai tersimpan | input=U={'R': 21.88, 'I': 59.38, 'A': 59.38, 'S': 50.0, 'E': 28.12, 'C': 71.88}; T={'R': 0.3, 'I': 0.6, 'A': 0.1, 'S': 0.2, 'E': 0.4, 'C': 0.8} | expected=(0.4708, 0.8752, 0.0) | observed=(0.4708, 0.8752, 0.0)
+[PASS] E5.25.0 Firing strength: U = T tepat di breakpoint | input=U={'R': 25.0, 'I': 25.0, 'A': 25.0, 'S': 25.0, 'E': 25.0, 'C': 25.0}; T={'R': 0.25, 'I': 0.25, 'A': 0.25, 'S': 0.25, 'E': 0.25, 'C': 0.25} | expected=(0.0, 1.0, 1.0) | observed=(0.0, 1.0, 1.0)
+[PASS] E5.50.0 Firing strength: U = T tepat di breakpoint | input=U={'R': 50.0, 'I': 50.0, 'A': 50.0, 'S': 50.0, 'E': 50.0, 'C': 50.0}; T={'R': 0.5, 'I': 0.5, 'A': 0.5, 'S': 0.5, 'E': 0.5, 'C': 0.5} | expected=(0.0, 1.0, 1.0) | observed=(0.0, 1.0, 1.0)
+[PASS] E5.75.0 Firing strength: U = T tepat di breakpoint | input=U={'R': 75.0, 'I': 75.0, 'A': 75.0, 'S': 75.0, 'E': 75.0, 'C': 75.0}; T={'R': 0.75, 'I': 0.75, 'A': 0.75, 'S': 0.75, 'E': 0.75, 'C': 0.75} | expected=(0.0, 1.0, 1.0) | observed=(0.0, 1.0, 1.0)
+[PASS] E6 Firing strength: dimensi non-utama tak beririsan | input=U={'R': 90.0, 'I': 50.0, 'A': 10.0, 'S': 100.0, 'E': 20.0, 'C': 40.0}; T={'R': 0.9, 'I': 0.5, 'A': 0.1, 'S': 0.1, 'E': 0.2, 'C': 0.4} | expected=(0.1667, 1.0, 0.0) | observed=(0.1667, 1.0, 0.0)
+[PASS] E7 Firing strength: aturan seri menentukan alphaModerate (Ilmu Hukum) | input=I menjauh vs S menjauh | expected=alphaModerate(I menjauh) < 1 dan alphaModerate(S menjauh) = 1 | observed=0.0000 ; 1.0000
+[PASS] F1.(1, 0, 0) Agregasi MIN/MAX (101 titik z) | input=alpha(Less,Moderate,High)=(1, 0, 0) | expected=selisih maks <= 1e-12 | observed=0.00e+00
+[PASS] F1.(0, 1, 0) Agregasi MIN/MAX (101 titik z) | input=alpha(Less,Moderate,High)=(0, 1, 0) | expected=selisih maks <= 1e-12 | observed=0.00e+00
+[PASS] F1.(0, 0, 1) Agregasi MIN/MAX (101 titik z) | input=alpha(Less,Moderate,High)=(0, 0, 1) | expected=selisih maks <= 1e-12 | observed=0.00e+00
+[PASS] F1.(0.4708, 0.875, 0) Agregasi MIN/MAX (101 titik z) | input=alpha(Less,Moderate,High)=(0.4708, 0.875, 0) | expected=selisih maks <= 1e-12 | observed=0.00e+00
+[PASS] F1.(0.3, 0.3, 0.3) Agregasi MIN/MAX (101 titik z) | input=alpha(Less,Moderate,High)=(0.3, 0.3, 0.3) | expected=selisih maks <= 1e-12 | observed=0.00e+00
+[PASS] F1.(0, 0, 0) Agregasi MIN/MAX (101 titik z) | input=alpha(Less,Moderate,High)=(0, 0, 0) | expected=selisih maks <= 1e-12 | observed=0.00e+00
+[PASS] F1.(1, 1, 1) Agregasi MIN/MAX (101 titik z) | input=alpha(Less,Moderate,High)=(1, 1, 1) | expected=selisih maks <= 1e-12 | observed=0.00e+00
+[PASS] F1.(0.5, 0.2, 0.9) Agregasi MIN/MAX (101 titik z) | input=alpha(Less,Moderate,High)=(0.5, 0.2, 0.9) | expected=selisih maks <= 1e-12 | observed=0.00e+00
+[PASS] F1.(0.25, 0.75, 0.5) Agregasi MIN/MAX (101 titik z) | input=alpha(Less,Moderate,High)=(0.25, 0.75, 0.5) | expected=selisih maks <= 1e-12 | observed=0.00e+00
+[PASS] F1.(0, 0.5, 1) Agregasi MIN/MAX (101 titik z) | input=alpha(Less,Moderate,High)=(0, 0.5, 1) | expected=selisih maks <= 1e-12 | observed=0.00e+00
+[PASS] G1.(1, 0, 0) Centroid vs referensi eksak | input=alpha=(1, 0, 0) | expected=19.18421052631579 | observed=19.18421052631579
+[PASS] G1.(0, 1, 0) Centroid vs referensi eksak | input=alpha=(0, 1, 0) | expected=50.0 | observed=50.0
+[PASS] G1.(0, 0, 1) Centroid vs referensi eksak | input=alpha=(0, 0, 1) | expected=80.8157894736842 | observed=80.8157894736842
+[PASS] G1.(0.4708, 0.875, 0) Centroid vs referensi eksak | input=alpha=(0.4708, 0.875, 0) | expected=37.0084449251738 | observed=37.0084449251738
+[PASS] G1.(0.3, 0.3, 0.3) Centroid vs referensi eksak | input=alpha=(0.3, 0.3, 0.3) | expected=50.0 | observed=50.00000000000001
+[PASS] G1.(0, 0, 0) Centroid vs referensi eksak | input=alpha=(0, 0, 0) | expected=0.0 | observed=0.0
+[PASS] G1.(1, 1, 1) Centroid vs referensi eksak | input=alpha=(1, 1, 1) | expected=50.0 | observed=50.0
+[PASS] G1.(0.5, 0.2, 0.9) Centroid vs referensi eksak | input=alpha=(0.5, 0.2, 0.9) | expected=57.65058179329227 | observed=57.65058179329227
+[PASS] G1.(0.25, 0.75, 0.5) Centroid vs referensi eksak | input=alpha=(0.25, 0.75, 0.5) | expected=56.19453410802669 | observed=56.19453410802669
+[PASS] G1.(0, 0.5, 1) Centroid vs referensi eksak | input=alpha=(0, 0.5, 1) | expected=71.64356435643565 | observed=71.64356435643563
+[PASS] G2.(0, 0, 1) Centroid (nilai tabel naskah) | input=alpha=(0, 0, 1) | expected=80.82 | observed=80.82
+[PASS] G2.(1, 0, 0) Centroid (nilai tabel naskah) | input=alpha=(1, 0, 0) | expected=19.18 | observed=19.18
+[PASS] G2.(0, 1, 0) Centroid (nilai tabel naskah) | input=alpha=(0, 1, 0) | expected=50.0 | observed=50.0
+[PASS] G2.(1, 0, 1) Centroid (nilai tabel naskah) | input=alpha=(1, 0, 1) | expected=50.0 | observed=50.0
+[PASS] G3 Centroid: penyebut nol | input=mu = 0 di semua z | expected=0.0 | observed=0.0
+[PASS] G4.presisi penuh Centroid contoh kerja (4 desimal) | input=U=presisi penuh; T=Sistem Informasi | expected=37.0078 | observed=37.0078
+[PASS] G5.presisi penuh Centroid contoh kerja setelah pembulatan tampilan | input=U=presisi penuh | expected=37.01 | observed=37.01
+[PASS] G4.nilai tersimpan Centroid contoh kerja (4 desimal) | input=U=nilai tersimpan; T=Sistem Informasi | expected=37.0089 | observed=37.0089
+[PASS] G5.nilai tersimpan Centroid contoh kerja setelah pembulatan tampilan | input=U=nilai tersimpan | expected=37.01 | observed=37.01
+[PASS] H1 Skor jarak contoh kerja, presisi penuh (4 desimal) | input=U=EXACT; T=Sistem Informasi | expected=81.9792 | observed=81.9792
+[PASS] H2 Skor jarak contoh kerja, nilai tersimpan | input=U=STORED | expected=81.98 | observed=81.98
+[PASS] H3 Skor jarak U = T | input=U=T | expected=100.0 | observed=100.0
+[PASS] H4 Skor jarak U=0 vs T=0.5 | input= | expected=50.0 | observed=50.0
+[PASS] H5 Skor jarak U=100 vs T=0.1 | input= | expected=10.0 | observed=10.0
+[PASS] H6 Skor jarak: clip batas bawah | input=U=250 vs T=0 | expected=0.0 | observed=0.0
+[PASS] H7.semua sama Kode Holland (seri) | input={'R': 50.0, 'I': 50.0, 'A': 50.0, 'S': 50.0, 'E': 50.0, 'C': 50.0} | expected=RIA | observed=RIA
+[PASS] H7.seri di posisi 2-4 Kode Holland (seri) | input={'R': 50, 'I': 80, 'A': 80, 'S': 80, 'E': 10, 'C': 10} | expected=IAS | observed=IAS
+[PASS] H7.seri di batas posisi ke-3 Kode Holland (seri) | input={'R': 90, 'I': 50, 'A': 50, 'S': 50, 'E': 10, 'C': 10} | expected=RIA | observed=RIA
+[PASS] H7.seri C vs E Kode Holland (seri) | input={'R': 0, 'I': 0, 'A': 0, 'S': 0, 'E': 70, 'C': 70} | expected=ECR | observed=ECR
+[PASS] H7.contoh kerja (I=A=59.38) Kode Holland (seri) | input={'R': 21.88, 'I': 59.38, 'A': 59.38, 'S': 50.0, 'E': 28.12, 'C': 71.88} | expected=CIA | observed=CIA
+[FAIL] H7.kunci dict diacak, semua sama Kode Holland (seri) | input={'C': 40.0, 'E': 40.0, 'S': 40.0, 'A': 40.0, 'I': 40.0, 'R': 40.0} | expected=RIA | observed=CES
+[FAIL] H8.100 Pita kemiripan (batas) | input=skor=100 | expected=Kemiripan Sangat Tinggi | observed=Sangat Cocok
+[FAIL] H8.85 Pita kemiripan (batas) | input=skor=85 | expected=Kemiripan Sangat Tinggi | observed=Sangat Cocok
+[FAIL] H8.84.99 Pita kemiripan (batas) | input=skor=84.99 | expected=Kemiripan Tinggi | observed=Cocok
+[FAIL] H8.70 Pita kemiripan (batas) | input=skor=70 | expected=Kemiripan Tinggi | observed=Cocok
+[FAIL] H8.69.99 Pita kemiripan (batas) | input=skor=69.99 | expected=Kemiripan Sedang | observed=Cukup Cocok
+[FAIL] H8.55 Pita kemiripan (batas) | input=skor=55 | expected=Kemiripan Sedang | observed=Cukup Cocok
+[FAIL] H8.54.99 Pita kemiripan (batas) | input=skor=54.99 | expected=Kemiripan Rendah | observed=Tidak Cocok
+[FAIL] H8.40 Pita kemiripan (batas) | input=skor=40 | expected=Kemiripan Rendah | observed=Tidak Cocok
+[FAIL] H8.39.99 Pita kemiripan (batas) | input=skor=39.99 | expected=Kemiripan Sangat Rendah | observed=Sangat Tidak Cocok
+[FAIL] H8.0 Pita kemiripan (batas) | input=skor=0 | expected=Kemiripan Sangat Rendah | observed=Sangat Tidak Cocok
+[PASS] H9 Urutan seri skor (abjad nama) | input=3 program bertarget identik | expected=['Alfa', 'Mega', 'Zeta'] | observed=['Alfa', 'Mega', 'Zeta']
+[PASS] H10 top_n memotong daftar | input=20 program, top_n=5 | expected=5 | observed=5
+[FAIL] H11.semua sama (0) Deteksi profil seragam | input={'R': 0.0, 'I': 0.0, 'A': 0.0, 'S': 0.0, 'E': 0.0, 'C': 0.0} | expected=True | observed=ERROR: AttributeError("module 'logic.scoring' has no attribute 'profil_seragam'")
+[FAIL] H11.semua sama (28.12) Deteksi profil seragam | input={'R': 28.12, 'I': 28.12, 'A': 28.12, 'S': 28.12, 'E': 28.12, 'C': 28.12} | expected=True | observed=ERROR: AttributeError("module 'logic.scoring' has no attribute 'profil_seragam'")
+[FAIL] H11.beda 0.01 Deteksi profil seragam | input={'R': 50.0, 'I': 50.0, 'A': 50.0, 'S': 50.0, 'E': 50.0, 'C': 50.01} | expected=False | observed=ERROR: AttributeError("module 'logic.scoring' has no attribute 'profil_seragam'")
+[FAIL] H11.contoh kerja Deteksi profil seragam | input={'R': 21.88, 'I': 59.38, 'A': 59.38, 'S': 50.0, 'E': 28.12, 'C': 71.88} | expected=False | observed=ERROR: AttributeError("module 'logic.scoring' has no attribute 'profil_seragam'")
+[PASS] I1 Terpadu: skor kemiripan | input=800 pasangan profil x program | expected=0 | observed=0 | toleransi 0,0101 (pembulatan 2 desimal)
+[PASS] I2 Terpadu: overlap per dimensi | input=800 pasangan | expected=0 | observed=0
+[PASS] I3 Terpadu: alphaModerate dan alphaHigh | input=800 pasangan | expected=0 | observed=0
+[PASS] I4 Terpadu: centroid | input=800 pasangan | expected=0 | observed=0 | selisih maks 0.0050
+# numeric: 124/139 PASS

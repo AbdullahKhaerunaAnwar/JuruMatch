@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Masuk - JuruMatch{% endblock %}
+{% block content %}
+<section class="auth-card">
+  <h1>JuruMatch</h1>
+  <p>Pilih jenis akses yang ingin digunakan.</p>
+
+  <div class="role-choice">
+    <a class="role-card" href="{{ url_for('login') }}?mode=user">
+      <h2>👤 User</h2>
+      <p>Login sebagai pengguna untuk mengerjakan tes RIASEC dan melihat hasil.</p>
+    </a>
+
+    <a class="role-card" href="{{ url_for('admin_login') }}">
+      <h2>🛡️ Admin</h2>
+      <p>Login sebagai administrator untuk mengelola dan melihat data sistem.</p>
+    </a>
+  </div>
+</section>
+{% endblock %}

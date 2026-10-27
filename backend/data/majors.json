@@ -1,0 +1,22 @@
+[
+  {"id": 1,  "nama": "Teknik Mesin",                    "rumpun": "Saintek", "target": {"R": 0.9, "I": 0.5, "A": 0.1, "S": 0.1, "E": 0.2, "C": 0.4}},
+  {"id": 2,  "nama": "Teknik Sipil",                    "rumpun": "Saintek", "target": {"R": 0.9, "I": 0.4, "A": 0.2, "S": 0.1, "E": 0.2, "C": 0.5}},
+  {"id": 3,  "nama": "Teknik Elektro",                  "rumpun": "Saintek", "target": {"R": 0.9, "I": 0.6, "A": 0.1, "S": 0.1, "E": 0.3, "C": 0.3}},
+  {"id": 4,  "nama": "Agroteknologi",                   "rumpun": "Saintek", "target": {"R": 0.8, "I": 0.6, "A": 0.1, "S": 0.2, "E": 0.2, "C": 0.3}},
+  {"id": 5,  "nama": "Informatika/Ilmu Komputer",       "rumpun": "Saintek", "target": {"R": 0.4, "I": 0.9, "A": 0.2, "S": 0.1, "E": 0.3, "C": 0.5}},
+  {"id": 6,  "nama": "Kedokteran",                       "rumpun": "Saintek", "target": {"R": 0.3, "I": 0.9, "A": 0.1, "S": 0.6, "E": 0.2, "C": 0.3}},
+  {"id": 7,  "nama": "Matematika",                       "rumpun": "Saintek", "target": {"R": 0.2, "I": 0.9, "A": 0.1, "S": 0.1, "E": 0.2, "C": 0.5}},
+  {"id": 8,  "nama": "Farmasi",                          "rumpun": "Saintek", "target": {"R": 0.3, "I": 0.8, "A": 0.1, "S": 0.2, "E": 0.2, "C": 0.5}},
+  {"id": 9,  "nama": "Desain Komunikasi Visual",         "rumpun": "Soshum",  "target": {"R": 0.2, "I": 0.5, "A": 0.9, "S": 0.2, "E": 0.4, "C": 0.2}},
+  {"id": 10, "nama": "Arsitektur",                       "rumpun": "Saintek", "target": {"R": 0.5, "I": 0.6, "A": 0.9, "S": 0.1, "E": 0.3, "C": 0.3}},
+  {"id": 11, "nama": "Seni Rupa",                        "rumpun": "Soshum",  "target": {"R": 0.1, "I": 0.3, "A": 0.9, "S": 0.2, "E": 0.2, "C": 0.1}},
+  {"id": 12, "nama": "Psikologi",                        "rumpun": "Soshum",  "target": {"R": 0.1, "I": 0.6, "A": 0.4, "S": 0.9, "E": 0.2, "C": 0.3}},
+  {"id": 13, "nama": "Pendidikan Guru (PGSD/PAUD)",      "rumpun": "Soshum",  "target": {"R": 0.1, "I": 0.3, "A": 0.4, "S": 0.9, "E": 0.2, "C": 0.4}},
+  {"id": 14, "nama": "Keperawatan",                      "rumpun": "Saintek", "target": {"R": 0.3, "I": 0.6, "A": 0.1, "S": 0.9, "E": 0.2, "C": 0.4}},
+  {"id": 15, "nama": "Manajemen",                        "rumpun": "Soshum",  "target": {"R": 0.1, "I": 0.3, "A": 0.2, "S": 0.4, "E": 0.9, "C": 0.6}},
+  {"id": 16, "nama": "Ilmu Hukum",                       "rumpun": "Soshum",  "target": {"R": 0.1, "I": 0.5, "A": 0.2, "S": 0.5, "E": 0.9, "C": 0.4}},
+  {"id": 17, "nama": "Hubungan Internasional",           "rumpun": "Soshum",  "target": {"R": 0.1, "I": 0.4, "A": 0.3, "S": 0.5, "E": 0.9, "C": 0.3}},
+  {"id": 18, "nama": "Akuntansi",                        "rumpun": "Soshum",  "target": {"R": 0.1, "I": 0.4, "A": 0.1, "S": 0.2, "E": 0.5, "C": 0.9}},
+  {"id": 19, "nama": "Sistem Informasi",                 "rumpun": "Saintek", "target": {"R": 0.3, "I": 0.6, "A": 0.1, "S": 0.2, "E": 0.4, "C": 0.8}},
+  {"id": 20, "nama": "Administrasi Publik/Negara",       "rumpun": "Soshum",  "target": {"R": 0.1, "I": 0.3, "A": 0.1, "S": 0.5, "E": 0.5, "C": 0.9}}
+]

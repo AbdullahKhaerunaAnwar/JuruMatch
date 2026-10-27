@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}Hasil Rekomendasi{% endblock %}
+{% block content %}
+<h1>Hasil Tes — {{ nama }}</h1>
+
+{% if profil_seragam %}
+<div class="warn-uniform" role="alert">
+  <strong>Profil minat belum terdiferensiasi.</strong>
+  Keenam skor RIASEC Anda sama persis, sehingga tidak ada tipe minat yang menonjol.
+  Kode Holland tidak ditampilkan: kode semacam itu hanya muncul dari aturan urutan tetap
+  R–I–A–S–E–C ketika skor sama, bukan dari minat dominan Anda. Skor kemiripan di bawah
+  hanya mencerminkan tingkat jawaban Anda secara keseluruhan (semua tinggi atau semua rendah),
+  bukan pola minat, sehingga tidak informatif sebagai petunjuk program studi.
+  Coba ulangi tes dan bedakan jawaban sesuai seberapa besar ketertarikan Anda pada tiap aktivitas.
+</div>
+{% endif %}
+
+<div class="result-summary">
+  {% if profil_seragam %}
+  <p class="result-lead">Kode Holland: <strong class="kode-holland">tidak ditampilkan</strong> (keenam skor sama)</p>
+  {% else %}
+  <p class="result-lead">Kode Holland dominan Anda: <strong class="kode-holland">{{ kode_holland }}</strong></p>
+  {% endif %}
+  <p>Skor kemiripan profil (0–100) menunjukkan seberapa dekat profil skor RIASEC Anda dengan profil target setiap program studi; semakin tinggi, semakin dekat. Skor ini <strong>bukan probabilitas</strong>, bukan jaminan kecocokan, dan bukan penilaian psikologis yang tervalidasi.</p>
+</div>
+
+<h2>Skor RIASEC</h2>
+<div class="riasec-bars">
+  {% for kode in urutan_dimensi %}
+  {% set info = dimensi_info[kode] %}
+  <div class="bar-row">
+    <span class="bar-label"><span class="bar-icon">{{ info.icon }}</span>{{ kode }} — {{ info.nama }} ({{ info.label }})</span>
+    <div class="bar-track">
+      <div class="bar-fill bar-{{ info.kelas }}" style="width: {{ skor_riasec[kode] }}%;">{{ skor_riasec[kode] }}</div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="reading-guide">
+  <strong>Pita kemiripan (heuristik):</strong>
+  <span class="fit-pill fit-very">Kemiripan Sangat Tinggi ≥ 85</span>
+  <span class="fit-pill fit-good">Kemiripan Tinggi 70–84,99</span>
+  <span class="fit-pill fit-mid">Kemiripan Sedang 55–69,99</span>
+  <span class="fit-pill fit-low">Kemiripan Rendah 40–54,99</span>
+  <span class="fit-pill fit-very-low">Kemiripan Sangat Rendah &lt; 40</span>
+  <br><br>
+  Pita di atas bersifat <strong>heuristik</strong> untuk tampilan; bukan himpunan fuzzy, bukan probabilitas, dan bukan kategori kesesuaian yang tervalidasi. Urutan program studi ditentukan sepenuhnya oleh jarak profil. Perhitungan fuzzy Mamdani tambahan dihitung terpisah dan tidak memengaruhi urutan maupun skor.
+</div>
+
+<h2>Program Studi dengan Profil Paling Mirip — 5 Teratas</h2>
+<div class="rekom-list">
+  {% for r in rekomendasi %}
+  <div class="rekom-card">
+    <div class="rekom-rank">#{{ loop.index }}</div>
+    <div class="rekom-info">
+      <h3>{{ r.nama }}</h3>
+      <p class="rumpun-tag">{{ r.rumpun }}</p>
+      {% if not profil_seragam %}<span class="fit-pill">{{ r.kategori_kecocokan }}</span>{% endif %}
+    </div>
+    <div class="rekom-skor">{{ r.skor_kecocokan }} / 100</div>
+  </div>
+  {% endfor %}
+</div>
+
+<a class="btn btn-secondary" href="{{ url_for('tes') }}">Ulangi Tes</a>
+{% endblock %}

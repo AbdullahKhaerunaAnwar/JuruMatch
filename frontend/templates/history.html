@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Riwayat{% endblock %}
+{% block content %}
+<h1>Riwayat Tes</h1>
+
+{% if daftar %}
+<table class="tabel-riwayat">
+  <thead>
+    <tr><th>ID</th><th>Nama</th><th>Kode Holland</th><th>Tanggal</th><th></th></tr>
+  </thead>
+  <tbody>
+    {% for d in daftar %}
+    <tr>
+      <td>{{ d.id }}</td>
+      <td>{{ d.nama }}</td>
+      <td><span class="kode-holland kode-holland-sm">{{ d.kode_holland }}</span></td>
+      <td>{{ d.dibuat_pada }}</td>
+      <td><a class="link-lihat" href="{{ url_for('hasil', id_hasil=d.id) }}">Lihat →</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<div class="empty-state">
+  <p class="empty-icon">🗒️</p>
+  <p>Belum ada riwayat tes.</p>
+  <a class="btn" href="{{ url_for('tes') }}">Mulai Tes Sekarang</a>
+</div>
+{% endif %}
+{% endblock %}

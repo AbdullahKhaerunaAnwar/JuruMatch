@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block title %}Login Admin{% endblock %}{% block content %}
+<section class="auth-card"><h1>Login Admin</h1><p>Masuk ke panel administrator.</p>
+{% if error %}<div class="flash"><p>{{ error }}</p></div>{% endif %}
+<form method="post"><label>Email Admin</label><input class="auth-input" type="email" name="email" required>
+<label>Password</label><input class="auth-input" type="password" name="password" required>
+<button class="btn" type="submit">Login Admin</button></form><p><a href="{{url_for('login')}}">← Login pengguna</a></p></section>{% endblock %}

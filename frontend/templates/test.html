@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %}Tes RIASEC{% endblock %}
+{% block content %}
+<div class="test-intro">
+  <span class="section-kicker">Petunjuk Pengisian</span>
+  <h1>Tes Minat Karier RIASEC</h1>
+  <p>
+    Tidak ada jawaban benar atau salah. Untuk setiap aktivitas, pilih jawaban yang paling
+    menggambarkan <strong>seberapa besar Anda tertarik melakukan aktivitas tersebut</strong>.
+    Jawablah berdasarkan minat pribadi, bukan berdasarkan kemampuan, pekerjaan saat ini,
+    atau pendapat orang lain.
+  </p>
+  <div class="instruction-box">
+    <strong>Cara memilih jawaban:</strong> 1 = Sangat Tidak Tertarik · 2 = Tidak Tertarik ·
+    3 = Biasa Saja / Tidak Yakin · 4 = Tertarik · 5 = Sangat Tertarik.
+    Tes terdiri dari 48 aktivitas dalam 6 bagian RIASEC.
+  </div>
+</div>
+
+<form action="{{ url_for('proses') }}" method="POST" id="form-tes" novalidate>
+  <div class="field">
+    <label for="nama">Nama (opsional)</label>
+    <input type="text" id="nama" name="nama" placeholder="Nama kamu">
+  </div>
+
+  <div class="wizard-steps" id="wizard-steps">
+    {% for grup in kelompok_pertanyaan %}
+    <button type="button" class="wizard-dot dimensi-{{ grup.kelas }}" data-step="{{ loop.index0 }}" {% if not loop.first %}disabled{% endif %}>
+      <span class="wizard-dot-icon">{{ grup.icon }}</span>
+      <span class="wizard-dot-label">{{ grup.kode }}</span>
+    </button>
+    {% if not loop.last %}<span class="wizard-line"></span>{% endif %}
+    {% endfor %}
+  </div>
+
+  <div id="progress-wrap">
+    <div id="progress-bar"></div>
+    <p id="progress-text">0 / {{ total_pertanyaan }} pertanyaan terjawab</p>
+  </div>
+
+  {% for grup in kelompok_pertanyaan %}
+  <section class="dimensi-section dimensi-{{ grup.kelas }} step{% if loop.first %} step-active{% endif %}" data-step="{{ loop.index0 }}">
+    <div class="dimensi-header">
+      <span class="dimensi-icon">{{ grup.icon }}</span>
+      <div class="dimensi-heading-text">
+        <p class="dimensi-eyebrow">Bagian {{ loop.index }} dari {{ kelompok_pertanyaan|length }}</p>
+        <h2>{{ grup.nama }} <span class="dimensi-kode">({{ grup.kode }})</span></h2>
+        <p class="dimensi-label">{{ grup.label }}</p>
+        <p class="dimensi-desc">{{ grup.deskripsi }}</p>
+        <div class="question-guide"><strong>Petunjuk bagian ini:</strong> baca setiap aktivitas, lalu nilai seberapa besar Anda tertarik melakukannya.</div>
+      </div>
+    </div>
+
+    {% for p in grup.daftar_soal %}
+    <div class="question-card">
+      <p class="q-context">Seberapa tertarik Anda melakukan aktivitas berikut?</p>
+      <p class="q-text"><span class="q-no">{{ loop.index }}</span>{{ p.teks }}</p>
+      <div class="likert">
+        {% for nilai, teks_nilai in [(1,'Sangat Tidak Tertarik'), (2,'Tidak Tertarik'), (3,'Biasa Saja / Tidak Yakin'), (4,'Tertarik'), (5,'Sangat Tertarik')] %}
+        <label class="likert-opt">
+          <input type="radio" name="q_{{ p.id }}" value="{{ nilai }}" onchange="perbaruiProgress()">
+          <span class="likert-num">{{ nilai }}</span>
+          <span class="likert-text">{{ teks_nilai }}</span>
+        </label>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+  {% endfor %}
+
+  <div class="wizard-nav" id="wizard-nav">
+    <button type="button" id="btn-prev" class="btn btn-secondary" disabled>← Kembali</button>
+    <span id="wizard-step-text" class="wizard-step-text"></span>
+    <button type="button" id="btn-next" class="btn">Lanjut →</button>
+    <button type="submit" id="btn-final" class="btn btn-submit-final" hidden>Lihat Hasil Rekomendasi →</button>
+  </div>
+  <p id="wizard-warning" class="wizard-warning" hidden>Silakan jawab semua aktivitas pada bagian ini sebelum melanjutkan.</p>
+</form>
+{% endblock %}
+
+{% block scripts %}{% endblock %}

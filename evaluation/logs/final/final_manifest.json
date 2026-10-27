@@ -1,0 +1,52 @@
+{
+ "label": "final",
+ "environment": {
+  "python": "3.12.3",
+  "flask": "3.0.3",
+  "werkzeug": "3.1.9",
+  "platform": "Linux-6.18.44-fc-v153-x86_64-with-glibc2.39"
+ },
+ "app_dir": "/home/claude/JuruMatch/backend",
+ "code_manifest": {
+  "combined_sha256": "8017892454c33a8c3102092e649dbeefa53872d7b151c4539a11cb43bbb3b434",
+  "files": {
+   "backend/README.md": "159b554ed787e475a6cc655cf818291609aae1ccc03608bef62f6788dbf27fd0",
+   "backend/app.py": "bf8312f09442a8e16b6b11740aeaea8e5c97a1085a484e329422e8da9d4a8a54",
+   "backend/data/majors.json": "a6a368db392ea3f96e9e9e064e372878a44034563ee1d3927176100fdd284a26",
+   "backend/data/questions.json": "1337f38209dcdb7ceda17bd2f60dcb1d13a33ee1f4b0f80e1e8ef7f4f3dd5e82",
+   "backend/database.py": "bb486ab24850d4127dc42c5a7f43a68b6cc97152012569c4a43f808555e6df82",
+   "backend/logic/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "backend/logic/fuzzy_engine.py": "8d250fa3c57ac4bdfc57acf716a743a082898dc13e1f4a0dc4b89735b7dedb3c",
+   "backend/logic/membership.py": "6b799e6565ec0a03d78da3255e20002d8cdab1c653be73e516d6ecec3a94ed5b",
+   "backend/logic/scoring.py": "850952be0ce7bbfd907caae2e1e1d1a25edadd921f436a5e5a9b365bc5ce6da3",
+   "backend/requirements.txt": "7d1a75b45ba43a40f4b46f4eb844c9e98174b450ef31e563352770e22eae9062",
+   "backend/run.py": "4e6cb4c051b3c4ec3ab892499d3e5519463840f0a7c590ad3b136747fce0a32e",
+   "backend/wsgi.py": "aaa2e52024247281e79c49aa30642bc89c8400c2951fdcf46ac01608d43fa76d",
+   "frontend/README.md": "d19e25027b8ec301a4a2b9728e71a2174887b7ccef3f197255d16377e240b649",
+   "frontend/static/css/style.css": "53f89aa80382df0c764f646acbba1b4fd7970e6fd5cf18635e4e61624416a11b",
+   "frontend/static/js/main.js": "cf00acd982b3adf8b4c2700d25f353a6afd2073c09a2f42fa799461fee9cf01c",
+   "frontend/templates/admin_dashboard.html": "20f7df79131c5c4e6801687b6ee57ea60aed9b8372d99c0e634dbb4341f0494d",
+   "frontend/templates/admin_hasil_detail.html": "35a9cca8e7d7c12964328dd1eae00459e4881d248fa77bd1402a8296be8ece08",
+   "frontend/templates/admin_login.html": "b5b85abefd20b60fe335a1cb5c7a4544fbb6d08a3efaa23527d2b2c2e4d697b8",
+   "frontend/templates/base.html": "16b6230f97617c0a0c4be93b7020080c8f8d5eb3e8a884f2187764f780311f5f",
+   "frontend/templates/history.html": "8e26497aa013a2bd2e53ec9853fd97f946e88d7339f00ed20623472836720887",
+   "frontend/templates/index.html": "1c43121514f92721214ea376c82e8831cf05bccec42a4278a692ec4553bafbe6",
+   "frontend/templates/login.html": "db1ad2ec5e09888916071111497f8c19c5c1c7a859d6d9d8bd7bace467c7f25a",
+   "frontend/templates/register.html": "55044c85ad8c8d0d36078d0441bd3d7f5812929a070d0a1503830712e3e4144b",
+   "frontend/templates/result.html": "aed12b7b252a09f361b29194f1df50a8577c06513ab3b235039ee90d5dd538d7",
+   "frontend/templates/test.html": "c4d66e3dfe2bfb12bf0a6a37c5c3a4c6776446c004336d202874900cdcb89151",
+   "frontend/templates/user_login.html": "f107c8eb17850680670c4591e19585ffade665950e795059a2ba3691ae0bff9b"
+  }
+ },
+ "summary": {
+  "numeric": "numeric: 139/139 PASS",
+  "self_matching": "self_matching: 22/22 PASS",
+  "blackbox": "blackbox: 46/46 PASS"
+ },
+ "exit_codes": {
+  "verify_numeric.py": 0,
+  "self_matching.py": 0,
+  "blackbox_tests.py": 0
+ },
+ "catatan": "Catat juga `git rev-parse HEAD` pada saat menjalankan agar revisi kode yang diuji dapat dilacak."
+}

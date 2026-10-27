@@ -1,0 +1,311 @@
+{% extends "base.html" %}
+
+{% block title %}Detail Hasil Tes{% endblock %}
+
+{% block content %}
+
+<style>
+    .detail-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 25px;
+        padding: 25px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        color: white;
+    }
+
+    .detail-header h1 {
+        margin: 0 0 6px;
+        font-size: 1.8rem;
+    }
+
+    .detail-header p {
+        margin: 0;
+        opacity: .9;
+    }
+
+    .btn-back {
+        display: inline-block;
+        padding: 10px 16px;
+        border-radius: 10px;
+        background: white;
+        color: #1d4ed8;
+        text-decoration: none;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    .section-title {
+        margin: 30px 0 15px;
+        font-size: 1.3rem;
+        color: #1f2937;
+    }
+
+    .profile-card {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        gap: 25px;
+        align-items: center;
+        padding: 25px;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 4px 15px rgba(0,0,0,.06);
+    }
+
+    .holland-box {
+        text-align: center;
+        padding: 20px;
+        border-radius: 14px;
+        background: #eff6ff;
+        border: 1px solid #dbeafe;
+    }
+
+    .holland-code {
+        font-size: 2.4rem;
+        font-weight: 800;
+        letter-spacing: 5px;
+        color: #2563eb;
+    }
+
+    .holland-label {
+        margin-top: 5px;
+        font-size: .9rem;
+        color: #64748b;
+    }
+
+    .score-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 12px;
+    }
+
+    .score-card {
+        padding: 18px 10px;
+        text-align: center;
+        border-radius: 12px;
+        background: #f8fafc;
+        border: 1px solid #e5e7eb;
+    }
+
+    .score-code {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: #2563eb;
+    }
+
+    .score-value {
+        margin-top: 5px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #111827;
+    }
+
+    .recommendation-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .recommendation-card {
+        position: relative;
+        padding: 20px;
+        background: white;
+        border-radius: 16px;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 3px 12px rgba(0,0,0,.05);
+    }
+
+    .rank {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 34px;
+        height: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: #2563eb;
+        color: white;
+        font-weight: 800;
+    }
+
+    .recommendation-card h3 {
+        margin: 0 45px 7px 0;
+        font-size: 1.1rem;
+        color: #111827;
+    }
+
+    .rumpun {
+        display: inline-block;
+        padding: 4px 9px;
+        border-radius: 999px;
+        background: #f1f5f9;
+        color: #475569;
+        font-size: .78rem;
+        margin-bottom: 15px;
+    }
+
+    .match {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #16a34a;
+    }
+
+    .match-label {
+        font-size: .8rem;
+        color: #64748b;
+    }
+
+    .centroid {
+        margin-top: 8px;
+        font-size: .85rem;
+        color: #64748b;
+    }
+
+    .detail-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 12px;
+        font-size: .85rem;
+    }
+
+    .detail-table th,
+    .detail-table td {
+        padding: 7px;
+        text-align: center;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .detail-table th {
+        color: #475569;
+        font-weight: 600;
+    }
+
+    @media (max-width: 800px) {
+        .profile-card {
+            grid-template-columns: 1fr;
+        }
+
+        .score-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .recommendation-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .detail-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+</style>
+
+<div class="detail-header">
+    <div>
+        <h1>Detail Hasil Tes</h1>
+        <p>Hasil tes RIASEC peserta: <strong>{{ hasil.nama }}</strong></p>
+    </div>
+
+    <a href="{{ url_for('admin_dashboard') }}" class="btn-back">
+        ← Kembali ke Dashboard
+    </a>
+</div>
+
+
+<h2 class="section-title">Profil Minat RIASEC</h2>
+
+<div class="profile-card">
+
+    <div class="holland-box">
+        <div class="holland-label">Holland Code</div>
+        <div class="holland-code">{{ hasil.kode_holland }}</div>
+        {% if profil_seragam %}<div class="holland-label">Tidak bermakna: keenam skor sama (kode berasal dari urutan tetap R-I-A-S-E-C)</div>{% endif %}
+    </div>
+
+    <div>
+        <div class="score-grid">
+
+            {% for kode in ["R", "I", "A", "S", "E", "C"] %}
+            <div class="score-card">
+                <div class="score-code">{{ kode }}</div>
+                <div class="score-value">
+                    {{ "%.2f"|format(skor_riasec[kode]|float) }}
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+</div>
+
+
+<h2 class="section-title">5 Program Studi dengan Profil Paling Mirip</h2>
+
+<div class="recommendation-grid">
+
+{% for r in rekomendasi %}
+
+    <div class="recommendation-card">
+
+        <div class="rank">
+            {{ loop.index }}
+        </div>
+
+        <h3>{{ r.nama }}</h3>
+
+        <div class="rumpun">
+            {{ r.rumpun }}
+        </div>
+
+        <div>
+            <span class="match">
+                {{ "%.2f"|format(r.skor_kecocokan|float) }} / 100
+            </span>
+            <div class="match-label">
+                Skor kemiripan profil (menentukan urutan){% if not profil_seragam %} · {{ r.kategori_kecocokan }}{% endif %}
+            </div>
+            {% if r.mamdani_centroid is defined %}
+            <div class="centroid">
+                Centroid fuzzy Mamdani (perhitungan tambahan; tidak memengaruhi urutan atau skor): <strong>{{ "%.2f"|format(r.mamdani_centroid|float) }}</strong>
+            </div>
+            {% endif %}
+        </div>
+
+
+        <div class="centroid">Overlap fuzzy per dimensi (0–100):</div>
+        <table class="detail-table">
+            <thead>
+                <tr>
+                    <th>R</th>
+                    <th>I</th>
+                    <th>A</th>
+                    <th>S</th>
+                    <th>E</th>
+                    <th>C</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    {% for kode in ["R", "I", "A", "S", "E", "C"] %}
+                    <td>
+                        {{ "%.1f"|format(r.detail_kecocokan[kode]|float) }}
+                    </td>
+                    {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

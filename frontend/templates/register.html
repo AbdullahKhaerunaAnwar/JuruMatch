@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block title %}Daftar{% endblock %}{% block content %}
+<section class="auth-card"><h1>Buat Akun</h1><p>Daftar untuk menyimpan hasil tes RIASEC.</p>
+{% if error %}<div class="flash"><p>{{ error }}</p></div>{% endif %}
+<form method="post"><label>Nama</label><input class="auth-input" name="nama" required>
+<label>Email</label><input class="auth-input" type="email" name="email" required>
+<label>Password</label><input class="auth-input" type="password" name="password" minlength="6" required>
+<button class="btn" type="submit">Daftar</button></form><p>Sudah punya akun? <a href="{{url_for('login')}}">Login</a></p></section>{% endblock %}

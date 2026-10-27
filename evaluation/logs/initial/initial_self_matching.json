@@ -1,0 +1,376 @@
+{
+ "meta": {
+  "suite": "self_matching",
+  "label": "initial",
+  "environment": {
+   "python": "3.12.3",
+   "flask": "3.0.3",
+   "werkzeug": "3.1.9",
+   "platform": "Linux-6.18.44-fc-v153-x86_64-with-glibc2.39"
+  },
+  "code_manifest_sha256": "03ed3a0d60cd87a8cc736003f940fcdd6a40063e80531e70afe4b2ab2391cb31",
+  "summary": "self_matching: 22/22 PASS",
+  "table": [
+   {
+    "program": "Teknik Mesin",
+    "own_similarity": 100.0,
+    "own_rank": 1,
+    "nearest_other": "Teknik Elektro",
+    "nearest_similarity": 95.0,
+    "margin": 5.0
+   },
+   {
+    "program": "Teknik Sipil",
+    "own_similarity": 100.0,
+    "own_rank": 1,
+    "nearest_other": "Teknik Mesin",
+    "nearest_similarity": 95.0,
+    "margin": 5.0
+   },
+   {
+    "program": "Teknik Elektro",
+    "own_similarity": 100.0,
+    "own_rank": 1,
+    "nearest_other": "Agroteknologi",
+    "nearest_similarity": 95.0,
+    "margin": 5.0
+   },
+   {
+    "program": "Agroteknologi",
+    "own_similarity": 100.0,
+    "own_rank": 1,
+    "nearest_other": "Teknik Elektro",
+    "nearest_similarity": 95.0,
+    "margin": 5.0
+   },
+   {
+    "program": "Informatika/Ilmu Komputer",
+    "own_similarity": 100.0,
+    "own_rank": 1,
+    "nearest_other": "Matematika",
+    "nearest_similarity": 93.33,
+    "margin": 6.67
+   },
+   {
+    "program": "Kedokteran",
+    "own_similarity": 100.0,
+    "own_rank": 1,
+    "nearest_other": "Farmasi",
+    "nearest_similarity": 88.33,
+    "margin": 11.67
+   },
+   {
+    "program": "Matematika",
+    "own_similarity": 100.0,
+    "own_rank": 1,
+    "nearest_other": "Farmasi",
+    "nearest_similarity": 95.0,
+    "margin": 5.0
+   },
+   {
+    "program": "Farmasi",
+    "own_similarity": 100.0,
+    "own_rank": 1,
+    "nearest_other": "Matematika",
+    "nearest_similarity": 95.0,
+    "margin": 5.0
+   },
+   {
+    "program": "Desain Komunikasi Visual",
+    "own_similarity": 100.0,
+    "own_rank": 1,
+    "nearest_other": "Seni Rupa",
+    "nearest_similarity": 90.0,
+    "margin": 10.0
+   },
+   {
+    "program": "Arsitektur",
+    "own_similarity": 100.0,
+    "own_rank": 1,
+    "nearest_other": "Desain Komunikasi Visual",
+    "nearest_similarity": 88.33,
+    "margin": 11.67
+   },
+   {
+    "program": "Seni Rupa",
+    "own_similarity": 100.0,
+    "own_rank": 1,
+    "nearest_other": "Desain Komunikasi Visual",
+    "nearest_similarity": 90.0,
+    "margin": 10.0
+   },
+   {
+    "program": "Psikologi",
+    "own_similarity": 100.0,
+    "own_rank": 1,
+    "nearest_other": "Pendidikan Guru (PGSD/PAUD)",
+    "nearest_similarity": 93.33,
+    "margin": 6.67
+   },
+   {
+    "program": "Pendidikan Guru (PGSD/PAUD)",
+    "own_similarity": 100.0,
+    "own_rank": 1,
+    "nearest_other": "Psikologi",
+    "nearest_similarity": 93.33,
+    "margin": 6.67
+   },
+   {
+    "program": "Keperawatan",
+    "own_similarity": 100.0,
+    "own_rank": 1,
+    "nearest_other": "Psikologi",
+    "nearest_similarity": 90.0,
+    "margin": 10.0
+   },
+   {
+    "program": "Manajemen",
+    "own_similarity": 100.0,
+    "own_rank": 1,
+    "nearest_other": "Ilmu Hukum",
+    "nearest_similarity": 91.67,
+    "margin": 8.33
+   },
+   {
+    "program": "Ilmu Hukum",
+    "own_similarity": 100.0,
+    "own_rank": 1,
+    "nearest_other": "Hubungan Internasional",
+    "nearest_similarity": 95.0,
+    "margin": 5.0
+   },
+   {
+    "program": "Hubungan Internasional",
+    "own_similarity": 100.0,
+    "own_rank": 1,
+    "nearest_other": "Ilmu Hukum",
+    "nearest_similarity": 95.0,
+    "margin": 5.0
+   },
+   {
+    "program": "Akuntansi",
+    "own_similarity": 100.0,
+    "own_rank": 1,
+    "nearest_other": "Administrasi Publik/Negara",
+    "nearest_similarity": 93.33,
+    "margin": 6.67
+   },
+   {
+    "program": "Sistem Informasi",
+    "own_similarity": 100.0,
+    "own_rank": 1,
+    "nearest_other": "Akuntansi",
+    "nearest_similarity": 90.0,
+    "margin": 10.0
+   },
+   {
+    "program": "Administrasi Publik/Negara",
+    "own_similarity": 100.0,
+    "own_rank": 1,
+    "nearest_other": "Akuntansi",
+    "nearest_similarity": 93.33,
+    "margin": 6.67
+   }
+  ]
+ },
+ "results": [
+  {
+   "id": "SM.01",
+   "component": "Self-matching",
+   "input": "target Teknik Mesin x100 sebagai profil pengguna",
+   "expected": "skor sendiri = 100.00; peringkat 1",
+   "observed": "skor=100.0; peringkat=1; terdekat lain=Teknik Elektro (95.0); margin=5.0",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "SM.02",
+   "component": "Self-matching",
+   "input": "target Teknik Sipil x100 sebagai profil pengguna",
+   "expected": "skor sendiri = 100.00; peringkat 1",
+   "observed": "skor=100.0; peringkat=1; terdekat lain=Teknik Mesin (95.0); margin=5.0",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "SM.03",
+   "component": "Self-matching",
+   "input": "target Teknik Elektro x100 sebagai profil pengguna",
+   "expected": "skor sendiri = 100.00; peringkat 1",
+   "observed": "skor=100.0; peringkat=1; terdekat lain=Agroteknologi (95.0); margin=5.0",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "SM.04",
+   "component": "Self-matching",
+   "input": "target Agroteknologi x100 sebagai profil pengguna",
+   "expected": "skor sendiri = 100.00; peringkat 1",
+   "observed": "skor=100.0; peringkat=1; terdekat lain=Teknik Elektro (95.0); margin=5.0",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "SM.05",
+   "component": "Self-matching",
+   "input": "target Informatika/Ilmu Komputer x100 sebagai profil pengguna",
+   "expected": "skor sendiri = 100.00; peringkat 1",
+   "observed": "skor=100.0; peringkat=1; terdekat lain=Matematika (93.33); margin=6.67",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "SM.06",
+   "component": "Self-matching",
+   "input": "target Kedokteran x100 sebagai profil pengguna",
+   "expected": "skor sendiri = 100.00; peringkat 1",
+   "observed": "skor=100.0; peringkat=1; terdekat lain=Farmasi (88.33); margin=11.67",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "SM.07",
+   "component": "Self-matching",
+   "input": "target Matematika x100 sebagai profil pengguna",
+   "expected": "skor sendiri = 100.00; peringkat 1",
+   "observed": "skor=100.0; peringkat=1; terdekat lain=Farmasi (95.0); margin=5.0",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "SM.08",
+   "component": "Self-matching",
+   "input": "target Farmasi x100 sebagai profil pengguna",
+   "expected": "skor sendiri = 100.00; peringkat 1",
+   "observed": "skor=100.0; peringkat=1; terdekat lain=Matematika (95.0); margin=5.0",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "SM.09",
+   "component": "Self-matching",
+   "input": "target Desain Komunikasi Visual x100 sebagai profil pengguna",
+   "expected": "skor sendiri = 100.00; peringkat 1",
+   "observed": "skor=100.0; peringkat=1; terdekat lain=Seni Rupa (90.0); margin=10.0",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "SM.10",
+   "component": "Self-matching",
+   "input": "target Arsitektur x100 sebagai profil pengguna",
+   "expected": "skor sendiri = 100.00; peringkat 1",
+   "observed": "skor=100.0; peringkat=1; terdekat lain=Desain Komunikasi Visual (88.33); margin=11.67",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "SM.11",
+   "component": "Self-matching",
+   "input": "target Seni Rupa x100 sebagai profil pengguna",
+   "expected": "skor sendiri = 100.00; peringkat 1",
+   "observed": "skor=100.0; peringkat=1; terdekat lain=Desain Komunikasi Visual (90.0); margin=10.0",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "SM.12",
+   "component": "Self-matching",
+   "input": "target Psikologi x100 sebagai profil pengguna",
+   "expected": "skor sendiri = 100.00; peringkat 1",
+   "observed": "skor=100.0; peringkat=1; terdekat lain=Pendidikan Guru (PGSD/PAUD) (93.33); margin=6.67",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "SM.13",
+   "component": "Self-matching",
+   "input": "target Pendidikan Guru (PGSD/PAUD) x100 sebagai profil pengguna",
+   "expected": "skor sendiri = 100.00; peringkat 1",
+   "observed": "skor=100.0; peringkat=1; terdekat lain=Psikologi (93.33); margin=6.67",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "SM.14",
+   "component": "Self-matching",
+   "input": "target Keperawatan x100 sebagai profil pengguna",
+   "expected": "skor sendiri = 100.00; peringkat 1",
+   "observed": "skor=100.0; peringkat=1; terdekat lain=Psikologi (90.0); margin=10.0",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "SM.15",
+   "component": "Self-matching",
+   "input": "target Manajemen x100 sebagai profil pengguna",
+   "expected": "skor sendiri = 100.00; peringkat 1",
+   "observed": "skor=100.0; peringkat=1; terdekat lain=Ilmu Hukum (91.67); margin=8.33",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "SM.16",
+   "component": "Self-matching",
+   "input": "target Ilmu Hukum x100 sebagai profil pengguna",
+   "expected": "skor sendiri = 100.00; peringkat 1",
+   "observed": "skor=100.0; peringkat=1; terdekat lain=Hubungan Internasional (95.0); margin=5.0",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "SM.17",
+   "component": "Self-matching",
+   "input": "target Hubungan Internasional x100 sebagai profil pengguna",
+   "expected": "skor sendiri = 100.00; peringkat 1",
+   "observed": "skor=100.0; peringkat=1; terdekat lain=Ilmu Hukum (95.0); margin=5.0",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "SM.18",
+   "component": "Self-matching",
+   "input": "target Akuntansi x100 sebagai profil pengguna",
+   "expected": "skor sendiri = 100.00; peringkat 1",
+   "observed": "skor=100.0; peringkat=1; terdekat lain=Administrasi Publik/Negara (93.33); margin=6.67",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "SM.19",
+   "component": "Self-matching",
+   "input": "target Sistem Informasi x100 sebagai profil pengguna",
+   "expected": "skor sendiri = 100.00; peringkat 1",
+   "observed": "skor=100.0; peringkat=1; terdekat lain=Akuntansi (90.0); margin=10.0",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "SM.20",
+   "component": "Self-matching",
+   "input": "target Administrasi Publik/Negara x100 sebagai profil pengguna",
+   "expected": "skor sendiri = 100.00; peringkat 1",
+   "observed": "skor=100.0; peringkat=1; terdekat lain=Akuntansi (93.33); margin=6.67",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "SM.unik",
+   "component": "Keunikan target",
+   "input": "20 vektor target",
+   "expected": "tidak ada vektor identik",
+   "observed": "20 vektor unik dari 20",
+   "status": "PASS",
+   "note": ""
+  },
+  {
+   "id": "SM.margin",
+   "component": "Margin minimum",
+   "input": "20 kasus",
+   "expected": "margin minimum > 0",
+   "observed": "margin minimum = 5.0",
+   "status": "PASS",
+   "note": ""
+  }
+ ]
+}
